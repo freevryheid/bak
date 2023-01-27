@@ -1,0 +1,13 @@
+[Unit]
+Description=kakoune editor daemon
+
+[Service]
+#Type=simple
+#Environment=KAK_SESSION="kaks"
+Environment=DISPLAY=:0
+#ExecStart=kak -d -s $KAK_SESSION
+ExecStart=kak -d -s kaks
+
+[Install]
+WantedBy=default.target
+

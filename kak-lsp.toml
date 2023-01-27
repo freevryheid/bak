@@ -1,0 +1,43 @@
+snippet_support = false
+verbosity = 2
+
+[server]
+# exit session if no requests were received during given period in seconds
+# works only in unix sockets mode (-s/--session)
+# set to 0 to disable
+timeout = 1800 # seconds = 30 minutes
+
+#[language.nim]
+#filetypes = ["nim"]
+#roots = [".nimble", ".git"]
+#command = "nimlsp"
+#args = ["path/to/nim/installation"] # optional (if installed from nimble or path wasn't provided at compiletime)
+
+[language.fortran]
+filetypes = ["fortran"]
+roots = [".git", ".fortls", "fpm.toml"]
+command = "fortls"
+args = ["--symbol_skip_mem", "--incremental_sync", "--autocomplete_no_prefix", "--lowercase_intrinsics"]
+
+#[language.python]
+#filetypes = ["python"]
+#roots = ["requirements.txt", "setup.py", ".git", ".hg"]
+#command = "pylsp"
+#settings_section = "_"
+#[language.python.settings._]
+# See https://github.com/python-lsp/python-lsp-server#configuration
+# pylsp.configurationSources = ["flake8"]
+
+#[language.vlang]
+#filetypes = ["vlang"]
+#roots = [".git", ".mod"]
+#command = "/home/grassy/.local/bin/vls_linux_x64"
+
+#[language.c_cpp]
+#filetypes = ["c", "cpp"]
+#roots = [".ccls-root", ".ccls", "compile_commands.json"]
+# ensure `ccls` is in a PATH directory, see https://github.com/MaskRay/ccls/wiki/Install#shell-script-wrapper
+#command = "ccls"
+# kak-lsp does not support newText yet
+#args = ["--init={\"completion\":{\"detailedLabel\":false}}"]
+
